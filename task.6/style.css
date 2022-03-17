@@ -1,0 +1,46 @@
+body{
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+}
+body div.div-edit{
+    
+width: 1000px;
+   height:600px;
+background-color: rgb(220, 240, 245);
+border: 2px solid #000;
+box-sizing: border-box;
+
+
+
+}
+
+
+
+body div.div1-edit{
+    align-content: center;
+display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    
+
+}
+
+.table-edit{
+
+    border: 2px solid rgb(170, 189, 190);
+background-color:rgb(179, 208, 223);
+}    
+ th{
+     padding:10px;
+     background-color: rgb(13, 126, 179);
+ }
+ td{
+     background-color: rgb(109, 174, 235);
+ }
+ .button1-edit{
+     padding: 10px;
+     width: 100px;
+ }
