@@ -1,0 +1,52 @@
+#Employee
+
+1) SELECT *FROM employee e  
+inner join project_employee_mapping pem on e.id=pem.employee_id
+inner join projects p on pem.project_id =p.id;
+
+2) SELECT *FROM employee e  
+left  join project_employee_mapping pem on e.id=pem.employee_id
+left join projects p on pem.project_id =p.id;
+
+3) SELECT *FROM employee e  
+right join project_employee_mapping pem on e.id=pem.employee_id
+right join projects p on pem.project_id =p.id;
+
+4) SELECT p.id ,p.name from projects p 
+union
+select d.id ,d.name from department d ;
+
+#Processflow
+
+SELECT p.name as process_name ,s.name as stage_name ,t.name as task_name ,GROUP_CONCAT( c.name) as checklist_name from process p  
+join  process_stage_mapping psm on p.id=psm.process_id
+join stage s on psm.stage_id =s.ID 
+join stage_task_mapping stm  on  s.id=stm.stage_id 
+join task t on stm.task_id=t.ID
+join task_checklist_mapping tcm  on  t.id=tcm.task_id  
+join checklist c  on tcm.checklist_id =c.ID 
+WHERE process_id =1
+group by s.name ,t.name ;
+
+#Eventpool
+
+
+1)
+select * from event where id in (select event_id from contribution c  where user_id=9);
+2)
+select * from event where id not in (select event_id from contribution c  where user_id=11);
+
+3) SELECT  count(c.user_id) as paid , count(r.user_id) as refused from `user` u
+left  join contribution c ON  u.id  =c.user_id  
+left join refused r  on  r.user_id =u.id
+where u.id =15;
+
+4) SELECT  sum(c.amount)as total_contributon from contribution c 
+where c.user_id =12;
+
+5)
+SELECT  g.id,COUNT(ug.group_id)as user_count, g.name,g.created_on ,u.name as created_by  from user_group ug
+ inner join  `group` g  on g.id  =ug.group_id 
+ inner join `user` u on u.id =g.created_by  
+WHERE u.id=12
+GROUP by ug.group_id ;
