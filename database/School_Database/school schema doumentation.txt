@@ -1,0 +1,29 @@
+Use case: School management
+
+Scope:
+This schema is mainly focused  on the exam, it's result and student attendance.
+
+In this schema, we have three persons. They are Student, Parent & Teacher.
+
+Student have access to see their  marks of their  exam  and their attendance.
+Parents have access to see their childern marks of the exam and their attendance.
+Teacher have access to edit the marks of student and their attendance.
+
+In this school managment schema, every user must have their login credentials according to the login type like parent login,student login & teacher login.
+Now the student login with their credentials and they can see the marks of their exam in exam we have exam type like quarterly, half yearly and final exam. 
+according the exam we can see results and we can see  attendance every week.  The student can edit his details.
+Parent login with parentlogin and the can see activites of his child and results .
+Teacher uses their login credentials to update the attendance & marks of their students.
+
+In this schema, we have 11 entities. They are: 
+Student
+Parent
+Teacher
+Login
+Exam result
+Exam
+examtype
+subject
+Attendance
+classroom
+ 
